@@ -24,7 +24,7 @@ This is done by using the following heuristic function `h(x)`. For each list `x`
 - common elements between `x` and `sol`
 - new elements that are present in `x` but not in `sol`
 
-$$ cost(x) = \frac{common\;elements}{new\;elements}$$
+$$ cost(x) = \frac{common elements}{new elements}$$
 
 Then, the `x` corresponding to the minimum cost will be added to the solution set.
 
@@ -38,8 +38,8 @@ In the example provided with `N = 10` and `seed = 42`, the greedy algorithm will
 
 This is the output for $N \in [5, 10, 20, 100, 500, 1000]$
 
-- Greedy solution for `N=5   : w=5` (bloat=0%) $ \rightarrow $ **optimal**
-- Greedy solution for `N=10  : w=10`  (bloat=0%) $ \rightarrow $ **optimal**
+- Greedy solution for `N=5   : w=5` (bloat=0%) - **optimal**
+- Greedy solution for `N=10  : w=10`  (bloat=0%) - **optimal**
 - Greedy solution for `N=20  : w=24` (bloat=20%)
 - Greedy solution for `N=100 : w=182` (bloat=82%)
 - Greedy solution for `N=500 : w=1262` (bloat=152%)
