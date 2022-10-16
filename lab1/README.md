@@ -16,7 +16,7 @@ After generating the problem, the algorithm will **sort** the lists by length, i
 
 ---
 
-The algorithm is starting by picking the longest list as a starting point.
+The algorithm is starting by picking the longest list as a starting point (i.e. the first list in the ordered list of lists).
 
 At this, point the solution is `sol = [0, 3, 4, 7, 9]`. From now on, the algorithm will look for the most promising lists to add. 
 
@@ -28,7 +28,7 @@ $$ cost(x) = \frac{common\quad elements}{new\quad elements}$$
 
 Then, the `x` corresponding to the minimum cost will be added to the solution set.
 
-In case of two elements that have same cost, the shortest one is taken (i.e. the first one that appears in the ordered list).
+In case of two elements that have same cost, the shortest one is taken (i.e. the first one that appears in the ordered list of lists).
 
 ![Example](./Example%20with%20N%20%3D%2010.png)
 
