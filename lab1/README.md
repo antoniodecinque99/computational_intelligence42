@@ -21,10 +21,10 @@ The algorithm is starting by picking the longest list as a starting point.
 At this, point the solution is `sol = [0, 3, 4, 7, 9]`. From now on, the algorithm will look for the most promising lists to add. 
 
 This is done by using the following heuristic function `h(x)`. For each list `x` in the problem set we compute:
-- common elements between `x` and `sol`
-- new elements that are present in `x` but not in `sol`
+- **common elements** between `x` and `sol`
+- **new elements** that are present in `x` but not in `sol`
 
-$$ cost(x) = \frac{common elements}{new elements}$$
+$$ cost(x) = \frac{common\quad elements}{new\quad elements}$$
 
 Then, the `x` corresponding to the minimum cost will be added to the solution set.
 
