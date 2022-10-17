@@ -1,6 +1,10 @@
 # Lab 1 - Set Covering
 
+This solution has been developed in collaboration with my colleague Andrea D'Attila (303339).
+
 For the solution a greedy algorithm has been adopted.
+
+The results obtained by this greedy algorithm could be used to implement an optimized version of the breadth-first search algorithm: a node should not be processed if its cost is greater than the cost obtained with the greedy solution, because, for sure, it leads to a worse solution.
 
 In order to explain the algorithm, we will consider an example of problem with `N = 10` and `seed = 42`.
 
@@ -18,7 +22,7 @@ After generating the problem, the algorithm will **sort** the lists by length, i
 
 The algorithm is starting by picking the longest list as a starting point (i.e. the first list in the ordered list of lists).
 
-At this, point the solution is `sol = [0, 3, 4, 7, 9]`. From now on, the algorithm will look for the most promising lists to add. 
+At this point the solution is `sol = [0, 3, 4, 7, 9]`. From now on, the algorithm will look for the most promising lists to add. 
 
 This is done by using the following heuristic function `h(x)`. For each list `x` in the problem set we compute:
 - **common elements** between `x` and `sol`
@@ -28,13 +32,13 @@ $$ cost(x) = \frac{common\quad elements}{new\quad elements}$$
 
 Then, the `x` corresponding to the minimum cost will be added to the solution set.
 
-In case of two elements that have same cost, the shortest one is taken (i.e. the first one that appears in the ordered list of lists).
+In case of two elements that have same cost, the longest one is taken (i.e. the first one that appears in the ordered list of lists).
 
 ![Example](./Example%20with%20N%20%3D%2010.png)
 
 In the example provided with `N = 10` and `seed = 42`, the greedy algorithm will give an **optimal** solution, with minimum `w = 10` (i.e. 10 elements contained in total):
 
-[[0, 3, 4, 7], [8, 1, 6], [2, 5]]
+[[0, 3, 4, 7, 9], [8, 1, 6], [2, 5]]
 
 This is the output for $N \in [5, 10, 20, 100, 500, 1000]$
 
@@ -43,5 +47,3 @@ This is the output for $N \in [5, 10, 20, 100, 500, 1000]$
 - Greedy solution for `N=20  : w=24` (bloat=20%)
 - Greedy solution for `N=100 : w=182` (bloat=82%)
 - Greedy solution for `N=500 : w=1262` (bloat=152%)
-- Greedy solution for `N=1000: w=2878` (bloat=188%)
-
