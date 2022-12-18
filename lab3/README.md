@@ -61,3 +61,32 @@ Other combination of functions could be tried, and I plan to add more.
 
 The crossover consists in the mean of the probabilities (genomes) of two chosen genomes.
 The mutation consists in changing such value completely.
+
+
+## Task 3.3 - MiniMax agent
+
+For the minmax problem, I developed a version of Minmax with Alpha-Beta Pruning, as it was more computionally efficient and lighter.
+
+This agent performs very well against pure random strategy, reaching almost win_rate of 1. 
+
+Against optimal strategy, instead, I get a weird behavior:
+* If nim size is 4, I never beat the opponent
+* If nim size is 5, I alwats beat the opponent
+
+Suggestions are welcome here!
+
+
+## Task 3.4 - Q-Learning agent
+
+For this task I used a Q-Learning approach, which is shown in the formula here:
+
+![alt text](Q_Learning.png)
+
+With Q-Learning, I get very good results, reaching almost win_rate of 1 against both random and optimal strategy!
+Code for this task was taken and adapted from here: https://github.com/abelmariam/nimPy
+I suggest you to look at it, as it could be very useful for future projects!
+
+
+
+
+
