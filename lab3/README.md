@@ -16,19 +16,12 @@ The player **taking the last object wins**.
 
 For the first task, I have defined some fixed rules and evaluated their performances against a **random player**:
 
-* Pick the maximum possible number of the highest row
-* Pick the minimum possible number of the lowest row
-* Pick the maximum possible number of the lowest row
-* Pick the minimum possible number of the highest row
+*Pick maximum amount of matches in the highest row
+*Pick minimum amount of matches in the highest row
+*Pick maximum amount of matches in the lowest row
+*Pick minimum amount of matches in the lowest row
 
-The performances of winning rates are in order:
-
-1. Pick the **maximum** possible number of the lowest row
-2. Pick the **maximum** possible number of the highest row
-3. Pick the minimum possible number of the lowest row
-4. Pick the minimum possible number of the highest row
-
-Intuitively, this order of performance makes sense: essentially, it is generally convenient to remove as much matches as possible, so that it is more likely for the agent to take the last match (and therefore win).
+Intuitively, this order of performance makes sense: essentially, it is generally convenient to remove matches from the highest row, so that more matches are available and it is more likely for the agent to take the last match (and therefore win).
 
 To confirm this hypothesis, I tried to combine all these rules two by two in a `count_and_decide` function:
 * If the active rows number is even, use the first chosen rule
