@@ -21,7 +21,7 @@ For the first task, I have defined some fixed rules and evaluated their performa
 *Pick maximum amount of matches in the lowest row
 *Pick minimum amount of matches in the lowest row
 
-Intuitively, this order of performance makes sense: essentially, it is generally convenient to remove matches from the highest row, so that more matches are available and it is more likely for the agent to take the last match (and therefore win).
+Intuitively, it makes sense that picking the minimum from the highest row is better: essentially, it is generally convenient to have more matches available, so that it is more likely for the agent to take the last match (and therefore win).
 
 To confirm this hypothesis, I tried to combine all these rules two by two in a `count_and_decide` function:
 * If the active rows number is even, use the first chosen rule
@@ -35,8 +35,8 @@ Then, this concept made me think of the following idea: we would want, in the en
         |   <---- 
 
 This can be achieved by having a `count_and_decide` function that works in the following way:
-* If the active rows are even, then chose a random row and pick all but one element
-* If the active rows are odd, then chose a random row and pick all elements
+* If the active rows are even, then choose a random row and pick all but one element
+* If the active rows are odd, then choose a random row and pick all elements
 
 In this way, I get a winning rate of 1. It may very likely be wrong and I did not see something obvious, so suggestions are welcome!
 
@@ -47,8 +47,8 @@ For this task, I reused the evolutionary algorithm that I wrote in the second la
 The strategy depends on a probability **p**, which is effectively the genome considered for the population.
 
 Given that the best performance was given by picking the most matches possible, this strategy will use **p** as a treshold:
-* Choose `pick_maximum_from_highest_row` as strategy, with probability **p**
-* Otherwise, choose `pick_maximum_from_highest_row`
+* Choose a random row and pick all but one element as strategy, with probability **p**
+* Otherwise, choose a random row and pick all elements
 
 Other combination of functions could be tried, and I plan to add more.
 
